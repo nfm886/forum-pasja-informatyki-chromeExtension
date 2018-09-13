@@ -10,8 +10,9 @@ function updateBadge() {
       reqBody = xhttp.responseText;
 
       const ntfyBadge = $(reqBody).find('#osnbox > a > span')[0].textContent;
-
-      chrome.browserAction.setBadgeText({text: ntfyBadge});
+      
+      if(Number(ntfyBadge) > 0)
+        chrome.browserAction.setBadgeText({text: ntfyBadge});
     }
   }
   xhttp.send(null);
