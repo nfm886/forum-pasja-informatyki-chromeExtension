@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #1e1e1e;
+      border: 1px solid #252525;
+    }
+    ::-webkit-scrollbar-button {
+      display: none;
+    }
+    ::-webkit-scrollbar-thumb {
+      min-height: 16px;
+      background: #3498db;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #282c34;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .notification-container {
+      background-color: #21252b;
+      border: 1px solid white;
+      width: 300px;
+      max-height: 340px;
+      overflow-y: scroll;
+    }
+    .notification__actions {
+      font-size: 12px;
+      text-align: center;
+      color: #d2d2d2;
+      height: 24px;
+      line-height: 24px;
+    }
+    .notification__actions--info a {
+      color: #c5c5c5;
+      text-decoration: none;
+    }
+    .notification__actions--close {
+      margin-right: 12px;
+      float: right;
+    }
+    .notification__actions--close:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .notification__item {
+      height: 70px;
+      background-color: #282c34;
+      border-bottom: 1px dashed #181a1f;
+      display: block;
+    }
+    .notification__item:hover {
+      background-color: #3a404b;
+    }
+    .notification__header {
+      font-size: 12px;
+      font-weight: 200;
+      color: #c5c5c5;
+      margin: 0;
+      padding: 3px 8px;
+    }
+    .notification__header--link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .notification__header--link a:focus, .notification__header--link a:hover, .notification__header--link a:visited, .notification__meta a:hover, .notification__meta a:visited, .notification__meta a:focus {
+      color: #5faee3;
+    }
+    .notification__header--icon {
+      margin-right: 4px;
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 3px;
+    }
+    .notification__meta {
+      font-size: 12px;
+      font-weight: 200;
+      color: #888;
+      margin: 3px 10px;
+    }
+    .notification__meta a {
+      color: #3498db;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="notification-container"></div>
+
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popup.js"></script>
+</body>
+</html>
