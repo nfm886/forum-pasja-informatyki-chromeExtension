@@ -13,6 +13,8 @@ function updateBadge() {
       
       if(Number(ntfyBadge) > 0)
         chrome.browserAction.setBadgeText({text: ntfyBadge});
+      else
+        chrome.browserAction.setBadgeText({text: ''});
     }
   }
   xhttp.send(null);

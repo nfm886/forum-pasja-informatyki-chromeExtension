@@ -83,10 +83,6 @@ function showNotifications() {
   xhttp.send(null);
 }
 
-function clearBadge() {
-  chrome.browserAction.setBadgeText({text: ''});
-}
-
 function strip_html_tags(str)
 {
    if ((str===null) || (str===''))
@@ -97,4 +93,3 @@ function strip_html_tags(str)
 }
 
 showNotifications();
-clearBadge();
