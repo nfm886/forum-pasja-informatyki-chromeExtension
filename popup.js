@@ -25,6 +25,10 @@ function showNotifications() {
       ntfyWhen.each((key, value) => {
         if(value.textContent.indexOf('dni') != -1 || value.textContent.indexOf('dzień') != -1) {
           notificationWhen.push(value.textContent + ' temu');
+        } else if(value.textContent.indexOf('godzina') != -1) {
+          notificationWhen.push(value.textContent + ' temu');
+        } else if(value.textContent.indexOf('godziny') != -1) {
+          notificationWhen.push(value.textContent.replace('godziny', 'godzin temu'));
         } else {
           notificationWhen.push(value.textContent);
         }
