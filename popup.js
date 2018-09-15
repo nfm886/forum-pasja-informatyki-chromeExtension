@@ -22,9 +22,15 @@ function showNotifications() {
             $('#nfyReadClose').on('click', () => {
                 window.close();
             });
+
+            clearBadge();
         }
     }
     xhttp.send(fd);
+}
+
+function clearBadge() {
+    chrome.browserAction.setBadgeText({text: ''});
 }
 
 showNotifications();
