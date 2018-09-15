@@ -4,15 +4,13 @@ function updateBadge() {
 
   const xhttp = new XMLHttpRequest();
 
-  xhttp.open('GET', 'https://forum.pasja-informatyki.pl/', true);
+  xhttp.open('GET', 'https://forum.pasja-informatyki.pl/async-notifications', true);
   xhttp.onreadystatechange = function(evt) {
     if(xhttp.readyState == 4 && xhttp.status === 200) {
-      reqBody = xhttp.responseText;
-
-      const ntfyBadge = $(reqBody).find('#osnbox > a > span')[0].textContent;
+      response = xhttp.response;
       
-      if(Number(ntfyBadge) > 0)
-        chrome.browserAction.setBadgeText({text: ntfyBadge});
+      if(Number(response) > 0)
+        chrome.browserAction.setBadgeText({text: response});
       else
         chrome.browserAction.setBadgeText({text: ''});
     }

@@ -24,77 +24,127 @@
       border: 0;
       font-family: Arial, Helvetica, sans-serif;
     }
-    .notification-container {
-      background-color: #21252b;
-      border: 1px solid white;
-      width: 300px;
+    .notifications {
+      background-color: #282c34;
+      border: 1px solid #181a1f;
+      width: 282px;
       max-height: 340px;
       overflow-y: scroll;
+      margin-top: 23px;
     }
-    .notification__actions {
-      font-size: 12px;
-      text-align: center;
+    .nfyTop {
+      font-size: 11px;
+      line-height: 12px;
+      padding: 5px;
       color: #d2d2d2;
-      height: 24px;
-      line-height: 24px;
+      text-align: center;
+      background-color: #21252b;
+      border: 1px solid #181a1f;
+      border-radius: 3px 3px 0 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
-    .notification__actions--info a {
-      color: #c5c5c5;
-      text-decoration: none;
-    }
-    .notification__actions--close {
-      margin-right: 12px;
+    #nfyReadClose {
       float: right;
-    }
-    .notification__actions--close:hover {
+      margin-right: 16px;
       cursor: pointer;
+    }
+    #nfyReadClose:hover {
       text-decoration: underline;
     }
-    .notification__item {
-      height: 70px;
+    .nfyWrap {
       background-color: #282c34;
-      border-bottom: 1px dashed #181a1f;
-      display: block;
     }
-    .notification__item:hover {
+    .itemBox {
+      border-bottom: 1px dashed #181a1f;
+      background-color: #282c34;
+      color: #d2d2d2;
+      height: 70px;
+    }
+    .itemBox:hover {
       background-color: #3a404b;
     }
-    .notification__header {
-      font-size: 12px;
-      font-weight: 200;
-      color: #c5c5c5;
-      margin: 0;
-      padding: 3px 8px;
+    .nicon.nanswer {
+      background:url('images/icons.png') no-repeat 0 0;
     }
-    .notification__header--link a {
-      color: #3498db;
-      text-decoration: none;
-      line-height: 18px;
+    .nicon.ncomment {
+      background:url('images/icons.png') no-repeat 0 -16px;
     }
-    .notification__header--link a:focus, .notification__header--link a:hover, .notification__header--link a:visited, .notification__meta a:hover, .notification__meta a:visited, .notification__meta a:focus {
-      color: #5faee3;
+    .nicon.nvoteup {
+      background:url('images/icons.png') no-repeat 0 -32px;
     }
-    .notification__header--icon {
-      margin-right: 4px;
+    .nicon.nvotedown {
+      background:url('images/icons.png') no-repeat 0 -48px;
+    }
+    .nicon.nbestanswer {
+      background:url('images/icons.png') no-repeat 0 -64px;
+    }
+    .nicon.nmessage {
+      background:url('images/icons.png') no-repeat 0 -80px;
+    }
+    .nicon.nwallpost {
+      background:url('images/icons.png') no-repeat 0 -96px;
+    }
+    .nicon {
+      display: inline-block;
       width: 16px;
       height: 16px;
-      position: relative;
-      top: 3px;
+      margin: 7px 4px 0 5px;
+      vertical-align: top;
     }
-    .notification__meta {
+    .nfyItemLine {
+      display: inline-block;
+      width: 240px;
       font-size: 12px;
-      font-weight: 200;
-      color: #888;
-      margin: 3px 10px;
+      color: #555;
+      margin-top: 3px;
     }
-    .notification__meta a {
+    .nfyWrap, .nfyItemLine {
+      color: #c5c5c5;
+    }
+    .nfyWrap, .nfyItemLine p {
+      display: inline-block;
+      margin: 0 0 2px 0;
+      line-height: 1.2;
+    }
+    .nfyWhat {
+      padding-top: 3px;
+    }
+    .nfyWrap .nfyItemLine a {
       color: #3498db;
+    }
+    .nfyWrap .nfyItemLine a {
+      font-size: 12px;
+      text-decoration: none;
+    }
+    .nfyItemLine a:focus, .nfyItemLine a:hover, .nfyItemLine a:visited {
+      color: #5faee3;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #2980b9;
+    }
+    .nfyTime {
+      color: #888;
+      display: block !important;
+    }
+    .nfyFooter {
+      background: #21252b;
+      border-color: #181a1f;
+      padding: 5px;
+      text-align: right;
+      font-size: 10px;
+    }
+    .nfyFooter a {
+      color: #d2d2d2;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="notification-container"></div>
+  <div class="notifications"></div>
 
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="popup.js"></script>
