@@ -11,6 +11,7 @@ function showNotifications() {
 
             const response  = xhttp.responseText;
 
+            $('.notifications').empty();
             $('.notifications').append(response);
 
             $('a').attr('target', '_blank');
