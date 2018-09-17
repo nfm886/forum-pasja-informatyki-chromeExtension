@@ -31,6 +31,7 @@
       width: 282px;
       max-height: 340px;
       overflow-y: scroll;
+      overflow-x: hidden;
       margin-top: 23px;
     }
     .nfyTop {
@@ -51,6 +52,9 @@
       float: right;
       margin-right: 16px;
       cursor: pointer;
+      color: #d2d2d2;
+      text-decoration: none;
+      font-weight: bold;
     }
     #nfyReadClose:hover {
       text-decoration: underline;
@@ -68,25 +72,25 @@
       background-color: #3a404b;
     }
     .nicon.nanswer {
-      background:url('images/icons.png') no-repeat 0 0;
-    }
+      background: url('images/icons.png') no-repeat 0 0;
+    } 
     .nicon.ncomment {
-      background:url('images/icons.png') no-repeat 0 -16px;
+      background: url('images/icons.png') no-repeat 0 -16px;
     }
     .nicon.nvoteup {
-      background:url('images/icons.png') no-repeat 0 -32px;
+      background: url('images/icons.png') no-repeat 0 -32px;
     }
     .nicon.nvotedown {
-      background:url('images/icons.png') no-repeat 0 -48px;
+      background: url('images/icons.png') no-repeat 0 -48px;
     }
     .nicon.nbestanswer {
-      background:url('images/icons.png') no-repeat 0 -64px;
+      background: url('images/icons.png') no-repeat 0 -64px;
     }
     .nicon.nmessage {
-      background:url('images/icons.png') no-repeat 0 -80px;
+      background: url('images/icons.png') no-repeat 0 -80px;
     }
     .nicon.nwallpost {
-      background:url('images/icons.png') no-repeat 0 -96px;
+      background: url('images/icons.png') no-repeat 0 -96px;
     }
     .nicon {
       display: inline-block;
@@ -131,7 +135,13 @@
       color: #888;
       display: block !important;
     }
+    .emptyActivity {
+      height: 81vh;
+      text-align: center;
+      font-size: 18px;
+    }
     .nfyFooter {
+      width: 282px;
       background: #21252b;
       border-color: #181a1f;
       padding: 5px;
@@ -141,6 +151,7 @@
     .nfyFooter a {
       color: #d2d2d2;
       text-decoration: none;
+      margin-right: 22px;
     }
     .lds-ripple {
       display: inline-block;

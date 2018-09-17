@@ -11,19 +11,38 @@ function showNotifications() {
 
             const response  = xhttp.responseText;
 
-            $('.notifications').empty();
-            $('.notifications').append(response);
+            if(response != 'Userid is empty!') {
 
-            $('a').attr('target', '_blank');
+                $('.notifications').empty();
+                $('.notifications').append(response);
+                
 
-            $('.nfyFooter a').attr('href', 'https://github.com/nfm886/forum-pasja-informatyki-chromeExtension');
-            $('.nfyFooter a').text('GitHub')
+                $('a').attr('target', '_blank');
 
-            $('#nfyReadClose').on('click', () => {
-                window.close();
-            });
+                $('.nfyFooter a').attr('href', 'https://github.com/nfm886/forum-pasja-informatyki-chromeExtension');
+                $('.nfyFooter a').text('GitHub')
 
-            clearBadge();
+                $('#nfyReadClose').on('click', () => {
+                    window.close();
+                });
+
+                clearBadge();
+            } else {
+                const template = `
+                    <div id="nfyWrap" class="nfyWrap">
+                        <div class="nfyTop">Nie jesteś zalogowany <a id="nfyReadClose" href="https://forum.pasja-informatyki.pl/login" target="_blank">zaloguj się</a></div>
+                        <div class="nfyContainer">
+                            <div id="nfyContainerInbox" class="emptyActivity">
+                                <p>Brak aktywności</p>
+                            </div>
+                            <div class="nfyFooter">
+                                <a href="https://github.com/nfm886/forum-pasja-informatyki-chromeExtension" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>`;
+                $('.notifications').empty();
+                $('.notifications').append(template);
+            }
         }
     }
     xhttp.send(fd);
