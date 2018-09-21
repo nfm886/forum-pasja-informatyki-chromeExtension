@@ -1,0 +1,52 @@
+::-webkit-scrollbar-thumb {
+    background: #CCC;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+    background-color: #fefefe;
+}
+html, body {
+    background-color: #fefefe;
+}
+.notifications {
+    border: 1px solid #CCC;
+}
+.nfyTop {
+    color: #333;
+    background: #eaeaea;
+    border: 1px solid #CCC;
+}
+#nfyReadClose {
+    color: #333;
+}
+.nfyWrap {
+    background: #fefefe;
+}
+.itemBox {
+    border-bottom: 1px dashed #CCC;
+}
+.itemBox:hover {
+    background-color: #eaeaea;
+}
+.nfyItemLine {
+    color: #555;
+}
+.nfyWrap .nfyItemLine a {
+    color: #44a;
+}
+.nfyItemLine a:focus, .nfyItemLine a:hover, .nfyItemLine a:visited {
+    color: #44a;
+}
+.nfyWhat {
+    color: #555;
+} 
+.nfyTime {
+    color: #888;
+}
+.nfyFooter {
+    background: #fefefe;
+    border-color: #CCC;
+}
+.nfyFooter a {
+    color: #333;
+}

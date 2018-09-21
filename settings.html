@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Powiadomienia z Pasją - Ustawienia</title>
+    <style>
+        html, body {
+            height: 100vh;
+        }
+        .container {
+            margin: 50px auto 0 auto;
+            width: 60%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header {
+            text-align: center;
+        }
+        .settings {
+            margin: 0 auto;
+            width: 80%;
+        }
+        .theme, .sounds {
+            align-self: center;
+            font-size: 16px;
+        }
+        .theme-options, .sounds-options {
+            padding: 12px;
+        }
+        form {
+            margin-left: 18px;
+        }
+        .actions button {
+            float: right;
+            margin: 12px;
+            padding: 6px 12px;
+            border-radius: 3px;
+        }
+        .save {
+            background-color: #0984e3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Powiadomienia z Pasją - ustawienia</h1>
+            <hr>
+        </div>
+        <div class="settings">
+            <div class="theme">
+                <h3>Motyw</h3>
+                <form>
+                    <div class="theme-options">
+                        <input type="radio" name="theme" id="light">
+                        <label for="light">Jasny (domyślny)</label>
+                    </div>
+                    <div class="theme-options">
+                        <input type="radio" name="theme" id="dark">
+                        <label for="dark">Ciemny</label>
+                    </div>
+                </form>
+            </div>
+            <div class="sounds">
+                <h3>Dźwięki powiadomień</h3>
+                <form>
+                    <div class="sounds-options">
+                        <input type="radio" name="sound" id="off">
+                        <label for="off">Wyciszone (domyślnie)</label>
+                    </div>
+                    <div class="sounds-options">
+                        <input type="radio" name="sound" id="on">
+                        <label for="on">Włączone</label>
+                    </div>
+                    <div class="sounds-options">
+                        <input type="radio" name="sound" id="onlyPriv">
+                        <label for="onlyPriv">Włączone (tylko wiadomości prywatne)</label>
+                    </div>
+                </form>
+            </div>
+            <div class="actions">
+                <button class="save">Zapisz</button>
+                <button class="close">Zamknij</button>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

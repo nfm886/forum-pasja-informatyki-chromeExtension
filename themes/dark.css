@@ -1,0 +1,60 @@
+::-webkit-scrollbar {
+    background: #1e1e1e;
+    border: 1px solid #252525;
+}
+::-webkit-scrollbar-thumb {
+    background: #3498db;
+}
+::-webkit-scrollbar-track {
+    background-color: #282c34;
+}
+html, body {
+    background-color: #282c34;
+}
+.notifications {
+    border: 1px solid #181a1f;
+}
+.nfyTop {
+    color: #d2d2d2;
+    background-color: #21252b;
+    border: 1px solid #181a1f;
+}
+#nfyReadClose {
+    color: #d2d2d2;
+}
+.itemBox {
+    border-bottom: 1px dashed #181a1f;
+    background-color: #282c34;
+    color: #d2d2d2;
+}
+.itemBox:hover {
+    background-color: #3a404b;
+}
+.nfyItemLine {
+    color: #555;
+}
+.nfyWrap {
+    background-color: #282c34;
+}
+.nfyWrap .nfyItemLine a {
+    color: #3498db;
+}
+.nfyItemLine a:focus, .nfyItemLine a:hover, .nfyItemLine a:visited {
+    color: #5faee3;
+}
+a:visited {
+    color: #2980b9;
+}
+.nfyWhat {
+    color: #d2d2d2;
+}
+.nfyTime {
+    color: #888;
+}
+.nfyFooter {
+    background: #21252b;
+    border-color: #181a1f;
+}
+.nfyFooter a {
+    color: #d2d2d2;
+}

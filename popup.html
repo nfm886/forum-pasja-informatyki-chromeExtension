@@ -5,29 +5,21 @@
   <style>
     ::-webkit-scrollbar {
       width: 8px;
-      background: #1e1e1e;
-      border: 1px solid #252525;
     }
     ::-webkit-scrollbar-button {
       display: none;
     }
     ::-webkit-scrollbar-thumb {
       min-height: 16px;
-      background: #3498db;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: #282c34;
     }
     html, body {
       margin: 0;
       padding: 0;
       border: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #282c34;
       min-height: 340px;
     }
     .notifications {
-      border: 1px solid #181a1f;
       width: 282px;
       max-height: 340px;
       overflow-y: scroll;
@@ -38,10 +30,7 @@
       font-size: 11px;
       line-height: 12px;
       padding: 5px;
-      color: #d2d2d2;
       text-align: center;
-      background-color: #21252b;
-      border: 1px solid #181a1f;
       border-radius: 3px 3px 0 0;
       position: fixed;
       top: 0;
@@ -52,24 +41,14 @@
       float: right;
       margin-right: 16px;
       cursor: pointer;
-      color: #d2d2d2;
       text-decoration: none;
       font-weight: bold;
     }
     #nfyReadClose:hover {
       text-decoration: underline;
     }
-    .nfyWrap {
-      background-color: #282c34;
-    }
     .itemBox {
-      border-bottom: 1px dashed #181a1f;
-      background-color: #282c34;
-      color: #d2d2d2;
       height: 70px;
-    }
-    .itemBox:hover {
-      background-color: #3a404b;
     }
     .nicon.nanswer {
       background: url('images/icons.png') no-repeat 0 0;
@@ -103,7 +82,6 @@
       display: inline-block;
       width: 240px;
       font-size: 12px;
-      color: #555;
       margin-top: 3px;
     }
     .nfyWrap, .nfyItemLine {
@@ -118,21 +96,13 @@
       padding-top: 3px;
     }
     .nfyWrap .nfyItemLine a {
-      color: #3498db;
-    }
-    .nfyWrap .nfyItemLine a {
       font-size: 12px;
       text-decoration: none;
     }
     .nfyItemLine a:focus, .nfyItemLine a:hover, .nfyItemLine a:visited {
-      color: #5faee3;
       text-decoration: none;
     }
-    a:visited {
-      color: #2980b9;
-    }
     .nfyTime {
-      color: #888;
       display: block !important;
     }
     .emptyActivity {
@@ -142,14 +112,11 @@
     }
     .nfyFooter {
       width: 282px;
-      background: #21252b;
-      border-color: #181a1f;
       padding: 5px;
       text-align: right;
       font-size: 10px;
     }
     .nfyFooter a {
-      color: #d2d2d2;
       text-decoration: none;
       margin-right: 22px;
     }
@@ -191,6 +158,7 @@
   </style>
 </head>
 <body>
+  <audio id="nfSound" src="appointed.ogg"></audio>
   <div class="notifications">
     <div class="lds-ripple"><div></div><div></div></div>
   </div>
