@@ -2,29 +2,20 @@ function showNotifications() {
 
     const fd = new FormData();
     fd.append('ajax', 'receiveNotify');
-
+    
     const xhttp = new XMLHttpRequest();
-
     xhttp.open('POST', 'https://forum.pasja-informatyki.pl/eventnotify', true);
-    xhttp.onreadystatechange = function(evt) {
+    xhttp.onreadystatechange = function(e) {
+
         if(xhttp.readyState === 4 && xhttp.status === 200) {
-
             const response  = xhttp.responseText;
+            const nfyContainerInbox = $(response).find('#nfyContainerInbox');
 
-            if(response != 'Userid is empty!') {
-
-                $('.notifications').empty();
-                $('.notifications').append(response);
-                
-
+            if(response !== 'Userid is empty!') {
+                $('.nfyContainer').empty();
+                $('.nfyContainer').append(nfyContainerInbox);
                 $('a').attr('target', '_blank');
-
-                $('.nfyFooter a').attr('href', 'https://github.com/nfm886/forum-pasja-informatyki-chromeExtension');
-                $('.nfyFooter a').text('GitHub')
-
-                $('#nfyReadClose').on('click', () => {
-                    window.close();
-                });
+                $(response).find('.nfyFooter').remove();
 
                 clearBadge();
             } else {
@@ -54,7 +45,7 @@ function clearBadge() {
 
 function setUserTheme() {
     chrome.storage.sync.get(['theme'], (options) => {
-        $('head').append(`<link rel="stylesheet" href="themes/${options.theme}.css">`);
+        $('head').append(`<link rel="stylesheet" href="../assets/themes/${options.theme}.css">`);
     });
 }
 

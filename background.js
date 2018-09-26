@@ -16,7 +16,7 @@ function setDefaultSettings() {
 }
 
 function addAudioToDOM() {
-  $('body').prepend(`<audio src="appointed.ogg"></audio>`);
+  $('body').prepend(`<audio src="/assets/sounds/appointed.ogg"></audio>`);
 }
 
 function playSound(audio) {
