@@ -4,7 +4,11 @@ Rozszerzenie do przeglądarki Google Chrome, przygotowane z myslą o forum.pasja
 
 Dodatek znajduje się w [Chrome WebStore](https://chrome.google.com/webstore/detail/powiadomienia-z-pasją/dmmcokdhdhjkhifpdfbanobonhmacped), skąd też zachęcam do pobrania.
 
-# CHANGELOG
+### CHANGELOG
+
+Wersja 3.0
+  - Dodano możliwość obserwowania wybranych tagów z forum.
+  - Kilka mniejszych usprawnień.
 
 Wersja 2.1
   - Dodano możliwość ustawienia jednego z dwóch motywów: Jasny (domyślny) i Ciemny.
@@ -29,17 +33,18 @@ $ mkdir Powiadomienia-z-Pasją && cd Powiadomienia-z-Pasją
 $ git clone https://github.com/nfm886/forum-pasja-informatyki-chromeExtension.git .
 ```
 
-Włączamy przeglądarkę Chrome i przechodzimy pod adres **chrome://extensions**, uruchamiamy *tryb programisty* i naciskamy **załaduj rozpakowane**, po czym wskazujemy katalog Powiadomienia-z-Pasją.
+Włączamy przeglądarkę Chrome i przechodzimy pod adres ```chrome://extensions```, uruchamiamy **tryb programisty** i naciskamy **załaduj rozpakowane**, po czym wskazujemy katalog ```Powiadomienia-z-Pasją```.
 
-Debuggowanie skryptu w tle (**background.js**) moemy rozpącząc klikając *strona w tle* na karcie z rozszerzeniami Chrome.
+Debuggowanie skryptu w tle (**background.js**) moemy rozpącząc klikając **strona w tle** na karcie z rozszerzeniami Chrome.
 Jeśli chcemy debugować okienko popup, po kliknięciu ikony dodatku na toolbarze Google Chrome, naciskamy prawy klawisz myszy i wybieramy **zbadaj**. Tym sposobem odpalimy Dev Toolsy.
 
 
 ### TODO
 
- - Dodać możliwość obserwowania wybranych tagów z forum
+ - ~~Dodać możliwość obserwowania wybranych tagów z forum~~
+ - Informowanie o nowych tagach poprzez plakietkę.
 
-LICENSE
+### LICENSE
 ----
 
 MIT
