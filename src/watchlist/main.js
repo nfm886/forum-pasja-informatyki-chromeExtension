@@ -60,7 +60,7 @@ String.prototype.trunc = String.prototype.trunc ||
 
 const parseWhen = when => (when.indexOf('dni') != -1) || (when.indexOf('dzień') != -1 ) || (when.indexOf('godzin') != -1) || (when.indexOf('minut') != -1) ? when + ' temu' : when;
 
-const gettingsPosts = (object, value) => {
+const gettingPosts = (object, value) => {
 
   if(value >= 0) {
     const req = new XMLHttpRequest();
@@ -85,7 +85,7 @@ const gettingsPosts = (object, value) => {
         });
 
         value = value - 1;
-        gettingsPosts(followList, value);
+        gettingPosts(followList, value);
       }
     }
     req.send(null);
@@ -102,7 +102,7 @@ chrome.storage.sync.get(['followed'], storage => {
         link: storage.followed[i].link
       });
     }
-    gettingsPosts(followList, followList.length - 1);
+    gettingPosts(followList, followList.length - 1);
   } else {
     activateSettingsTab();
   }
