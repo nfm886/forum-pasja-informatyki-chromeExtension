@@ -4,6 +4,127 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../assets/themes/main.css">
+  <style>
+    ::-webkit-scrollbar-track {
+      margin-top: 24px;
+    }
+    .secondTop {
+      position: fixed;
+      margin-top: 24px;
+      z-index: 1;
+    }
+    .watchList {
+      display: flex;
+    }
+    .watchListContainer, .watchListSettings {
+      margin-top: 24px;
+      max-width: 0;
+      height: 0;
+      overflow-x: hidden;
+      transition: max-width .3s ease;
+    }
+    .activeTab {
+      max-width: 272px;
+      width: 272px;
+      height: 100%;
+    }
+    .indexing {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .info {
+      margin: 10px;
+    }
+    .info span {
+      font-weight: bold;
+    }
+    .scan {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      margin: 0 auto;
+    }
+    .runScan {
+      width: 90%;
+      align-self: center;
+    }
+    .progress {
+      display: none;
+      width: 220px;
+      margin-top: 8px;
+      align-self: flex-start;
+      position: relative;
+    }
+    .scanning{ 
+      margin: 10px 5px;
+    }
+    .searchTags {
+      width: 210px;
+      height: 24px;
+      font-size: 14px;
+    }
+    .search-field {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-field .clear {
+      position: absolute;
+      top: 7px;
+      right: 30px;
+      border: none;
+      background-color: rgba(255,255,255,0);
+    }
+    .foundTags::-webkit-scrollbar-track {
+      margin-top: 0;
+    }
+    .foundTags {
+      display: none;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      max-height: 128px;
+      width: 210px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .foundTags > li {
+      line-height: 26px;
+    }
+    .following p {
+      text-align: center;
+    }
+    .followed {
+      margin: 5px;
+      padding: 0;
+      width: 100%;
+    }
+    .followed li {
+      display: inline-block;
+      margin: 3px;
+      padding: 3px 6px 3px 0;
+      border-radius: 5px;
+    }
+    .addToWatchlist, .removeFromWatchlist {
+      border: none;
+      border-radius: 5px;
+    }
+    .addToWatchlist:hover, .removeFromWatchlist:hover {
+      filter: brightness(90%);
+    }
+    .show-tag {
+      margin: 0 6px;
+      padding: 2px 6px;
+      border-radius: 5px;
+    }
+    .nfyWhat {
+      margin-left: 20px !important;
+    }
+    .nfyTime {
+      margin: 8px 14px !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,8 +134,42 @@
         <span class="page-watchlist active">Obserowane</span> • <span class="page-notifications">Powiadomienia</span>
         <a id="nfyReadClose" target="_blank">[ X ]</a>
       </div>
-      <div class="nfyContainer">
+      <div class="nfyTop secondTop">
+        <span class="switchTab active" id="gotoList">Pokaż</span> <span class="switchTab" id="gotoSettings">Ustawienia</span>
+      </div>
+      <div class="nfyContainer watchList">
+        <div class="watchListContainer activeTab">
+          <div id="nfyContainerInbox">
+            <div class="lds-ripple">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="watchListSettings">
+          <div class="following">
+            <p>Brak obserowanych tagów</p>
+            <ul class="followed">
 
+            </ul>
+          </div>
+          <div class="indexing">
+            <div class="info">
+              <p class="last">Ostatnie indeksowanie: <span>Nigdy</span></p>
+              <p class="indexed">Zaindeksowano: <span>0</span> tagów.</p>
+            </div>
+            <div class="scan">
+              <button class="runScan">Uruchom indeksowanie</button>
+              <progress class="progress" value="0" max="100"></progress>
+              <div class="scanning"></div>
+            </div>
+          </div>
+          <div class="search-field">
+            <input type="text" name="searchTags" class="searchTags" placeholder="Szukaj tagów...">
+            <button class="clear">czyść</button>
+            <ul class="foundTags"></ul>
+          </div>
+        </div>
         <div class="nfyFooter">
           <a href="https://github.com/nfm886/forum-pasja-informatyki-chromeExtension" target="_blank">GitHub</a>
         </div>
@@ -23,8 +178,10 @@
   </div>
 
   <script type="text/javascript" src="../jquery.js"></script>
-  <script type="text/javascript" src="../src/watchlist.js"></script>
-  <script type="text/javascript" src="../src/nfyTop.js"></script>
+  <script type="text/javascript" src="../src/nav.js"></script>
+  <script type="text/javascript" src="../src/watchlist/indexing.js"></script>
+  <script type="text/javascript" src="../src/watchlist/settings.js"></script>
+  <script type="text/javascript" src="../src/watchlist/main.js"></script>
 </body>
 
 </html>

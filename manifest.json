@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Powiadomienia z Pasją",
-    "description": "Dodatek pokazujący powiadomienia z Forum.Pasja-Informatyki.pl",
-    "version": "2.1",
+    "description": "Dodatek wyświetlający powiadomienia i obserwowane tagi z Forum.Pasja-Informatyki.pl",
+    "version": "3.0",
     "icons": {
       "16": "./assets/images/icon.png",
        "48": "./assets/images/icon-48x48.png",

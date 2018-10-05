@@ -1,40 +1,31 @@
-$('input[name="theme"]').on('change', themeChanged);
-$('input[name="sound"]').on('change', soundsChanged);
-$('.close').on('click', closeSettings);
-$('.save').on('click', saveSettings);
+const userPreferences = {};
 
-let userPreferences = {};
-
-chrome.storage.sync.get(['theme', 'sounds'], (options) => {
-    userPreferences.theme = options.theme;
-    userPreferences.sounds = options.sounds;
+chrome.storage.sync.get(['theme', 'sounds'], storage => {
+    userPreferences.theme = storage.theme;
+    userPreferences.sounds = storage.sounds;
 });
 
-function checkPreferencesRadios() {
-    chrome.storage.sync.get(['theme', 'sounds'], (options) => {
-        console.log(options.theme, options.sounds)
-        $(`#${options.theme}`).attr('checked', true);
-        $(`#${options.sounds}`).attr('checked', true);
-    });
-}
+chrome.storage.sync.get(['theme', 'sounds'], storage => {
+    $(`#${storage.theme}`).attr('checked', true);
+    $(`#${storage.sounds}`).attr('checked', true);
+});
 
-function closeSettings() {
-    window.close();
-}
-
-function themeChanged() {
-    userPreferences.theme = this.getAttribute('id');
-}
-
-function soundsChanged() {
-    userPreferences.sounds = this.getAttribute('id');
-}
-
-function saveSettings() {
+const closeSettings = () => window.close();
+const saveSettings = () => {
     chrome.storage.sync.set({
         theme: userPreferences.theme,
         sounds: userPreferences.sounds
     });
 }
 
-checkPreferencesRadios();
+function themeChanged() {
+    userPreferences.theme = this.getAttribute('id');
+}
+function soundsChanged() {
+    userPreferences.sounds = this.getAttribute('id');
+}
+
+$('input[name="theme"]').on('change', themeChanged);
+$('input[name="sound"]').on('change', soundsChanged);
+$('.close').on('click', closeSettings);
+$('.save').on('click', saveSettings);

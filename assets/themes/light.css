@@ -16,6 +16,9 @@ html, body {
     background: #eaeaea;
     border: 1px solid #CCC;
 }
+.secondTop {
+    background: #fefefe;
+}
 #nfyReadClose {
     color: #333;
 }
@@ -28,7 +31,7 @@ html, body {
 .itemBox:hover {
     background-color: #eaeaea;
 }
-.nfyItemLine {
+.nfyItemLine, .watchListSettings {
     color: #555;
 }
 .nfyWrap .nfyItemLine a {
@@ -49,4 +52,21 @@ html, body {
 }
 .nfyFooter a {
     color: #333;
+}
+.followed li, .removeFromWatchlist, .addToWatchlist, .show-tag {
+    background-color: #e67e22;
+    color: #fff;
+}
+.searchTags:focus {
+    outline-color: #e67e22;
+}
+.foundTags {
+    border: 1px solid #CCC;
+}
+.foundTags > li {
+    border-bottom: 1px solid #CCC;
+}
+.foundTags li > button {
+    background-color: #fefefe;
+    color: #000;
 }

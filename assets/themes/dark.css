@@ -19,10 +19,13 @@ html, body {
     background-color: #21252b;
     border: 1px solid #181a1f;
 }
+.secondTop {
+    background: #282c34;
+}
 #nfyReadClose {
     color: #d2d2d2;
 }
-.itemBox {
+.itemBox, .watchListSettings {
     border-bottom: 1px dashed #181a1f;
     background-color: #282c34;
     color: #d2d2d2;
@@ -57,4 +60,35 @@ a:visited {
 }
 .nfyFooter a {
     color: #d2d2d2;
+}
+.followed li, .removeFromWatchlist, .addToWatchlist, .runScan, .show-tag {
+    background-color: #21252b;
+    color: #b9b9b9;
+}
+.foundTags {
+    border: 1px solid #181a1f;
+}
+.foundTags > li {
+    border-bottom: 1px solid #181a1f;
+}
+.runScan {
+    border: none;
+}
+.runScan:hover, .removeFromWatchlist:hover {
+    filter: brightness(120%);
+}
+.searchTags {
+    border: 1px solid #181a1f;
+    background-color: #282c34;
+    color: #d2d2d2;
+    outline-color: #126252;
+    transition: all .3s ease;
+}
+.searchTags:focus {
+    border-color: #117964;
+    background-color: #7cc363;
+    color: #fff;
+}
+.search-field .clear {
+    color: #fff;
 }
