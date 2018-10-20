@@ -88,7 +88,7 @@ const gettingPosts = (object, value) => {
         gettingPosts(followList, value);
       }
     }
-    req.send(null);
+    req.send();
   } else {
     appendPosts(watchList);
   }

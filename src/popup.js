@@ -4,24 +4,16 @@ chrome.storage.sync.get(['theme'], storage => {
 
 const clearBadge = () => chrome.browserAction.setBadgeText({text: ''});
 
-const fd = new FormData();
+const formData = new FormData();
 const req = new XMLHttpRequest();
 
-fd.append('ajax', 'receiveNotify');
+formData.append('ajax', 'receiveNotify');
 req.open('POST', 'https://forum.pasja-informatyki.pl/eventnotify');
-req.onreadystatechange = e => {
+req.onreadystatechange = function(e) {
     if(req.readyState === 4 && req.status === 200) {
         const response  = req.responseText;
-        const nfyContainerInbox = $(response).find('#nfyContainerInbox');
-
-        if(response !== 'Userid is empty!') {
-            $('.nfyContainer').empty();
-            $('.nfyContainer').append(nfyContainerInbox);
-            $('a').attr('target', '_blank');
-            $(response).find('.nfyFooter').remove();
-
-            clearBadge();
-        } else {
+        
+        if(response == 'Userid is empty!') {
             const template = `<div id="nfyWrap" class="nfyWrap">
                                 <div class="nfyTop">Nie jesteś zalogowany <a id="nfyReadClose" href="https://forum.pasja-informatyki.pl/login" target="_blank">zaloguj się</a></div>
                                 <div class="nfyContainer">
@@ -35,8 +27,17 @@ req.onreadystatechange = e => {
                             </div>`;
             $('.notifications').empty();
             $('.notifications').append(template);
+        } else {
+            const nfyContainerInbox = $(response).find('#nfyContainerInbox');
+
+            $('.nfyContainer').empty();
+            $('.nfyContainer').append(nfyContainerInbox);
+            $('a').attr('target', '_blank');
+            $(response).find('.nfyFooter').remove();
+
+            clearBadge();
         }
     }
 }
-req.send(fd);
+req.send(formData);
 

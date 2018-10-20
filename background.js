@@ -23,16 +23,31 @@ const getLastNotification = new Promise((resolve, reject) => {
   req.onreadystatechange = e => {
     if(req.readyState === 4 && req.status === 200) {
       const response = req.responseText;
-      const nfyWhat = $(response).find('.nfyWhat');
       
-      nfyWhat.each((key, item) => {
-        nfyWhatArray.push(item.innerHTML.split('\n')[0]);
-      });
-      resolve(nfyWhatArray);
+      if(response !== 'Userid is empty!') {
+        const nfyWhat = $(response).find('.nfyWhat');
+        nfyWhat.each((key, item) => {
+          nfyWhatArray.push(item.innerHTML.split('\n')[0]);
+        });
+        resolve(nfyWhatArray);
+      }
+      
     }
   }
   req.send(formData);
 });
+
+const initializeWatchlist = () => {
+  chrome.storage.sync.get(['followed'], storage => {
+    if(storage.followed != undefined) {
+      if(storage.followed.length < 1) {
+        chrome.storage.sync.set({
+          followed: []
+        });
+      }
+    }
+  });
+}
 
 const updateBadge = () => {
   const req = new XMLHttpRequest();
@@ -64,18 +79,6 @@ const updateBadge = () => {
     }
   }
   req.send();
-}
-
-const initializeWatchlist = () => {
-  chrome.storage.sync.get(['followed'], storage => {
-    if(storage.followed != undefined) {
-      if(storage.followed.length < 1) {
-        chrome.storage.sync.set({
-          followed: []
-        });
-      }
-    }
-  });
 }
 
 setInterval(updateBadge, 1000*60);

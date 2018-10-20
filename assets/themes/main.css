@@ -113,6 +113,10 @@ html, body {
   display: block !important;
 }
 .emptyActivity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   height: 81vh;
   text-align: center;
   font-size: 18px;
