@@ -39,14 +39,25 @@ const html_unescape = html => html.replace(/&amp;/g, '&').replace(/&quot;/g, '"'
 
 const appendPosts = data => {
   const sorted = data.sort((a,b) => b.date - a.date);
+
+  const result = new Array();
+  $.each(sorted, function (i, e) {
+      const matchingItems = $.grep(result, function (item) {
+        return item.title === e.title && item.url === e.url;
+      });
+      if (matchingItems.length === 0){
+          result.push(e);
+      }
+  });
+
   $('#nfyContainerInbox').empty();
-  for(let i = 0; i < sorted.length; i++) {
+  for(let i = 0; i < result.length; i++) {
     const template = `<div class="itemBox">
                         <div class="nfyItemLine">
                           <p class="nfyWhat">
-                            <a href="${sorted[i].url}" target="_blank">${sorted[i].title}</a>
+                            <a href="${result[i].url}" target="_blank">${result[i].title}</a>
                           </p>
-                          <p class="nfyTime"><span class="show-tag">${sorted[i].tag}</span> ${sorted[i].when}</p>
+                          <p class="nfyTime">${result[i].when} w <span class="show-tag">${result[i].tag}</span></p>
                         </div>
                       </div>`;
     $('#nfyContainerInbox').append(template);
@@ -76,7 +87,7 @@ const gettingPosts = (object, value) => {
         
         title.each((key, item) => {
           watchList.push({
-            title: html_unescape(title[key].innerHTML).trunc(65),
+            title: html_unescape(title[key].innerHTML).trunc(65).toString(),
             when: parseWhen(when[key].innerHTML),
             date: parseTime(when[key].innerHTML),
             tag: object[value].name,
