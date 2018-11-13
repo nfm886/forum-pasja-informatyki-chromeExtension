@@ -6,6 +6,15 @@ Dodatek znajduje się w [Chrome WebStore](https://chrome.google.com/webstore/det
 
 ### CHANGELOG
 
+Wersja 4.0
+  - Usunięto dublowanie się pytań, przy obserwowaniu kilku tagów, które zostały użyte w tym samym poście.
+  - Zablokowano zakładkę "Pokaż" jeśli nie obserwuje się żadnych tagów.
+  - Upiększenie jasnego motywu, głównie w zakładce "Obserwowane" i drobne poprawki w ciemnym motywie.
+  - Kilka mniejszych poprawek i usprawnień.
+
+Wersja 3.1
+  - Usunięto błąd, przez który dodatek wpadał w 'bootloopa', jeśli użytkownik nie był zalogowany na forum.
+
 Wersja 3.0
   - Dodano możliwość obserwowania wybranych tagów z forum.
   - Kilka mniejszych usprawnień.
@@ -43,6 +52,7 @@ Jeśli chcemy debugować okienko popup, po kliknięciu ikony dodatku na toolbarz
 
  - ~~Dodać możliwość obserwowania wybranych tagów z forum~~
  - Informowanie o nowych tagach poprzez plakietkę.
+ - Naprawić błąd, przez który trzeba zamknąć i otworzyć okienko, aby tagi się pobrały.
 
 ### LICENSE
 ----

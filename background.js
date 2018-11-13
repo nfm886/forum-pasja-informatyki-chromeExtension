@@ -81,6 +81,12 @@ const updateBadge = () => {
   req.send();
 }
 
+// const updateWatchlist = () => {
+
+
+
+// }
+
 setInterval(updateBadge, 1000*60);
 
 chrome.runtime.onInstalled.addListener(setDefaultSettings);

@@ -64,7 +64,7 @@ const following = () => {
         $('.followed').empty();
         for(let i = 0; i < storage.followed.length; i++) {
           $('.following p').text('Obserwujesz');
-          $('.followed').append(`<li><button class="removeFromWatchlist" data-name="${storage.followed[i].name}">x</button> ${storage.followed[i].name} </li>`)
+          $('.followed').append(`<li><button class="removeFromWatchlist" data-name="${storage.followed[i].name}"><i class="fas fa-eraser"></i></button> ${storage.followed[i].name} </li>`)
         }
       } else {
         $('.followed').empty();

@@ -12,15 +12,18 @@ html, body {
     border: 1px solid #CCC;
 }
 .nfyTop {
-    color: #333;
-    background: #eaeaea;
-    border: 1px solid #CCC;
+    color: #fff;
+    background: #0984e3;
+    border: 1px solid #74b9ff;
+}
+.github-ref {
+    color: #fff;
 }
 .secondTop {
-    background: #fefefe;
+    background: #74b9ff;
 }
-#nfyReadClose {
-    color: #333;
+.tag-icon {
+    color: #0984e3
 }
 .nfyWrap {
     background: #fefefe;
@@ -54,11 +57,14 @@ html, body {
     color: #333;
 }
 .followed li, .removeFromWatchlist, .addToWatchlist, .show-tag {
-    background-color: #e67e22;
+    background-color: #0984e3;
     color: #fff;
 }
-.searchTags:focus {
-    outline-color: #e67e22;
+.progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+}
+.runScan:hover {
+    background: rgb(226, 226, 226);
 }
 .foundTags {
     border: 1px solid #CCC;

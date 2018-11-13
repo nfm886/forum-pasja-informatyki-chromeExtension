@@ -41,8 +41,9 @@ const appendPosts = data => {
   const sorted = data.sort((a,b) => b.date - a.date);
 
   const result = new Array();
-  $.each(sorted, function (i, e) {
-      const matchingItems = $.grep(result, function (item) {
+
+  $.each(sorted, (i, e) => {
+      const matchingItems = $.grep(result, (item) => {
         return item.title === e.title && item.url === e.url;
       });
       if (matchingItems.length === 0){
@@ -55,13 +56,15 @@ const appendPosts = data => {
     const template = `<div class="itemBox">
                         <div class="nfyItemLine">
                           <p class="nfyWhat">
-                            <a href="${result[i].url}" target="_blank">${result[i].title}</a>
+                            <span class="tag-icon"><i class="fab fa-slack"></i></span><a href="${result[i].url}" target="_blank">${result[i].title}</a>
                           </p>
                           <p class="nfyTime">${result[i].when} w <span class="show-tag">${result[i].tag}</span></p>
                         </div>
                       </div>`;
     $('#nfyContainerInbox').append(template);
   }
+
+  chrome.storage.local.set({temp: result});
 }
 
 String.prototype.trunc = String.prototype.trunc ||

@@ -71,6 +71,9 @@ a:visited {
 .foundTags > li {
     border-bottom: 1px solid #181a1f;
 }
+.progress[value]::-webkit-progress-bar {
+    background-color: #181a1f;
+}
 .runScan {
     border: none;
 }
@@ -84,11 +87,6 @@ a:visited {
     outline-color: #126252;
     transition: all .3s ease;
 }
-.searchTags:focus {
-    border-color: #117964;
-    background-color: #7cc363;
-    color: #fff;
-}
-.search-field .clear {
+.search-field {
     color: #fff;
 }
