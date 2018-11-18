@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Powiadomienia z Pasją",
-    "description": "Dodatek wyświetlający powiadomienia i obserwowane tagi z Forum.Pasja-Informatyki.pl",
-    "version": "4.0",
+    "description": "Szybki dostęp do powiadomień i obserwowawnych tagów z forum.pasja-informatyki.pl",
+    "version": "5.0",
     "icons": {
       "16": "./assets/images/icon.png",
        "48": "./assets/images/icon-48x48.png",
@@ -10,7 +10,7 @@
     },
     "options_page": "./views/settings.html",
     "background": {
-      "scripts": ["jquery.js","background.js"]
+      "scripts": ["./src/global/jquery.js","./src/global/functions.js","./src/background.js"]
     },
     "browser_action": {
       "default_icon": "./assets/images/icon.png",

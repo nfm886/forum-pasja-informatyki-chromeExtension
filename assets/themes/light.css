@@ -16,6 +16,9 @@ html, body {
     background: #0984e3;
     border: 1px solid #74b9ff;
 }
+#nfyReadClose {
+    color: #fff;
+}
 .github-ref {
     color: #fff;
 }

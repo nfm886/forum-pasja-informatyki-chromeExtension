@@ -6,6 +6,11 @@ Dodatek znajduje się w [Chrome WebStore](https://chrome.google.com/webstore/det
 
 ### CHANGELOG
 
+Wersja 5.0
+  - Dodano powiadomienia dźwiękowe i przez plakietkę o nowych tagach.
+  - Naprawiono błąd przez, który trzeba było zamknąć i otworzyć okienko, aby tagi się zaaktualizowały (teraz okienko jest przeładowywane po przejściu do obserwowanych)
+  - Kilka mniejszych poprawek
+
 Wersja 4.0
   - Usunięto dublowanie się pytań, przy obserwowaniu kilku tagów, które zostały użyte w tym samym poście.
   - Zablokowano zakładkę "Pokaż" jeśli nie obserwuje się żadnych tagów.
@@ -51,8 +56,8 @@ Jeśli chcemy debugować okienko popup, po kliknięciu ikony dodatku na toolbarz
 ### TODO
 
  - ~~Dodać możliwość obserwowania wybranych tagów z forum~~
- - Informowanie o nowych tagach poprzez plakietkę.
- - Naprawić błąd, przez który trzeba zamknąć i otworzyć okienko, aby tagi się pobrały.
+ - ~~Informowanie o nowych tagach poprzez plakietkę.~~
+ - ~~Naprawić błąd, przez który trzeba zamknąć i otworzyć okienko, aby tagi się pobrały.~~
 
 ### LICENSE
 ----

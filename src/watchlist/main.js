@@ -1,41 +1,6 @@
 const followList = new Array();
 const watchList = new Array();
-
-const parseTime = (string) => {
-
-	const lang = {
-		'stycznia': 'January',
-		'lutego': 'February',
-		'marca': 'March',
-		'kwietnia': 'April',
-		'maja': 'May',
-		'czerwca': 'June',
-		'lipca': 'July',
-		'sierpnia': 'August',
-		'września': 'September',
-		'października': 'October',
-		'listopada': 'November',
-		'grudnia': 'December'
-	}
-
-	const int = parseInt(string);
-	const monthString = string.substring(string.indexOf(' ') + 1);
-	const currentYear = new Date().getFullYear();
-
-	if(string.indexOf('sekund') != -1)
-		return Math.abs(new Date() - int * 1000);
-	else if(string.indexOf('minut') != -1)
-		return Math.abs(new Date() - int * 60 * 1000);
-	else if(string.indexOf('godzin') != -1)
-		return Math.abs(new Date() - int * 60 * 1000 * 60);
-	else if(string.indexOf('dzień') != -1 || string.indexOf('dni') != -1)
-		return Math.abs(new Date() - int * 60 * 1000 * 60 * 24);
-	else 
-		return Date.parse(`${lang[monthString]} ${int}, ${currentYear}`);
-
-}
-
-const html_unescape = html => html.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+const lastQuestions = new Array();
 
 const appendPosts = data => {
   const sorted = data.sort((a,b) => b.date - a.date);
@@ -64,15 +29,8 @@ const appendPosts = data => {
     $('#nfyContainerInbox').append(template);
   }
 
-  chrome.storage.local.set({temp: result});
+  chrome.storage.local.set({lastQuestions: lastQuestions});
 }
-
-String.prototype.trunc = String.prototype.trunc ||
-  function(n) {
-    return (this.length > n) ? this.substr(0, n-1) + '&hellip;' : this;
-  }
-
-const parseWhen = when => (when.indexOf('dni') != -1) || (when.indexOf('dzień') != -1 ) || (when.indexOf('godzin') != -1) || (when.indexOf('minut') != -1) ? when + ' temu' : when;
 
 const gettingPosts = (object, value) => {
 
@@ -88,6 +46,12 @@ const gettingPosts = (object, value) => {
         const when = $(doc).find('div.qa-q-item-main > span > span > span.qa-q-item-when > span.qa-q-item-when-data');
         const urls = $(doc).find('div.qa-q-item-main > div.qa-q-item-title > a');
         
+        lastQuestions.push({
+          tag: object[value].name,
+          title: html_unescape(title[0].innerHTML).trunc(65).toString(),
+          url: urls[0].getAttribute('href').replace('../', 'https://forum.pasja-informatyki.pl/')
+        });
+
         title.each((key, item) => {
           watchList.push({
             title: html_unescape(title[key].innerHTML).trunc(65).toString(),

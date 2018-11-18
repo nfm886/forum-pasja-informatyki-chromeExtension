@@ -1,11 +1,7 @@
 const activateWatchlistTab = () => {
   chrome.storage.sync.get(['followed'], storage => {
     if(storage.followed != undefined && storage.followed.length > 0) {
-      $('.lds-ripple').css('display', 'block');
-      $('.watchListSettings').removeClass('activeTab');
-      $('#gotoSettings').removeClass('active');
-      $('.watchListContainer').addClass('activeTab');
-      $('#gotoList').addClass('active');
+        location.reload();
     }
   });
 }

@@ -25,6 +25,9 @@ html, body {
 #nfyReadClose {
     color: #d2d2d2;
 }
+.github-ref {
+    color: #d2d2d2;
+}
 .itemBox, .watchListSettings {
     border-bottom: 1px dashed #181a1f;
     background-color: #282c34;

@@ -11,11 +11,11 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 340px;
+  min-height: 355px;
 }
 .notifications {
   width: 282px;
-  max-height: 340px;
+  max-height: 355px;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-top: 23px;
