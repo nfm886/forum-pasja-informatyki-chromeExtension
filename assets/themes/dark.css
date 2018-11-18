@@ -80,8 +80,8 @@ a:visited {
 .runScan {
     border: none;
 }
-.runScan:hover, .removeFromWatchlist:hover {
-    filter: brightness(120%);
+.runScan:hover, .removeFromWatchlist:hover, .addToWatchlist:hover {
+    background-color: #3a404b;
 }
 .searchTags {
     border: 1px solid #181a1f;
