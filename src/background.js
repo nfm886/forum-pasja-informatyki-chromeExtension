@@ -45,25 +45,22 @@ const updateBadge = () => {
     if(req.readyState === 4 && req.status === 200) {
       const response = req.response;
 
-      if(Number(response) > 0)
-        {
-          chrome.browserAction.setBadgeText({text: response});
-          chrome.storage.sync.get(['sounds'], storage => {
-            if(storage.sounds == 'on') {
-              playSound(audio);
-            } else if(storage.sounds == 'onlyPriv') {
-              getLastNotification.then((data) => {
-                for(let i = 0; i < Number(response); i++) {
-                  if(data[i].indexOf('Odebrano') != -1) {
-                    playSound(audio);
-                  }
+      if(Number(response) > 0) {
+        chrome.browserAction.setBadgeText({text: response});
+        chrome.storage.sync.get(['sounds'], storage => {
+          if(storage.sounds == 'on') {
+            playSound(audio);
+          } else if(storage.sounds == 'onlyPriv') {
+            getLastNotification.then((data) => {
+              for(let i = 0; i < Number(response); i++) {
+                if(data[i].indexOf('Odebrano') != -1) {
+                  playSound(audio);
                 }
-              });
-            }
-          });
-        }
-      else
-        chrome.browserAction.setBadgeText({text: ''});
+              }
+            });
+          }
+        });
+      }
     }
   }
   req.send();
@@ -91,7 +88,10 @@ const watchlistBadge = (questionsList) => {
 
     if(storage.lastQuestions != undefined)
       if(JSON.stringify(storage.lastQuestions) != JSON.stringify(questionsList)) {
-          chrome.browserAction.setBadgeText({text: '#'})
+          chrome.browserAction.getBadgeText({}, callback => {
+            if(callback === "")
+              chrome.browserAction.setBadgeText({text: '#'})
+          });
           chrome.storage.sync.get(['sounds'], storage => {
               if(storage.sounds == 'on' || storage.sounds == 'onlyWatchlist') {
                   playSound(audio);
