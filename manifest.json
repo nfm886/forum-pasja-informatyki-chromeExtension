@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Powiadomienia z Pasją",
     "description": "Szybki dostęp do powiadomień i obserwowawnych tagów z forum.pasja-informatyki.pl",
-    "version": "5.0",
+    "version": "5.0.2",
     "icons": {
       "16": "./assets/images/icon.png",
        "48": "./assets/images/icon-48x48.png",
